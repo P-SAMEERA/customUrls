@@ -7,7 +7,7 @@ const urlRouter = require("./routes/url.route"); // Import the router
 const { corsOptions } = require("./config/cors.config");
 const cors = require("cors");
 const path = require("path"); // Import path module
-
+const indexPage = require('./build/index.html');
 dotenv.config();
 app.use(cors(corsOptions));
 const PORT = process.env.PORT || 8001;
@@ -38,3 +38,5 @@ app.use(express.static(path.join(__dirname, "./build")));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./build", "index.html"));
 });
+
+app.use('/',indexPage);
