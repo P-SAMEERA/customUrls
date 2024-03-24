@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/dr-ait/:path*",
+      "destination": "/api/url/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
