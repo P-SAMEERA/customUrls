@@ -44,8 +44,8 @@ const ResultLink = ({ shortenedId }) => {
       <div className='result'>
         {redirectUrl ? (
           <>
-            <p>Shortened Url: <a href={`http://localhost:5000/api/url/${shortenedId}`} target='_blank' rel='noopener noreferrer'>{redirectUrl}</a></p>
-            <button onClick={() => window.open(`http://localhost:5000/api/url/${shortenedId}`, '_blank')} className={copied ? "copied" : ""}>
+            <p>Shortened Url: <a href={`https://custom-urls.vercel.app/${shortenedId}`} target='_blank' rel='noopener noreferrer'>{redirectUrl}</a></p>
+            <button onClick={() => window.open(`https://custom-urls.vercel.app/${shortenedId}`, '_blank')} className={copied ? "copied" : ""}>
               {copied ? "Copied!" : "Visit Link"}
             </button>
           </>
@@ -69,7 +69,7 @@ const InputUrl = () => {
     event.preventDefault();
     try {
       // console.log('Submitting URL:', url);
-      const response = await axios.post('http://localhost:5000/api/url/shorten', {
+      const response = await axios.post('https://custom-urls.vercel.app/', {
         redirectUrl: url
       });
       // console.log('Shortened URL response:', response.data);
